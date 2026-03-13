@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ui: {
                 subtitle: "7일제 달력을 넘어선 새로운 6일제 캘린더 시스템",
                 settingsBtn: "⚙️ 설정",
+                settingsDesc: "색상 / 언어 / 요일명",
                 selectedDayTitle: "선택된 날짜의 요일",
                 searchDateTitle: "날짜 검색하기",
                 anchorDateTxt: "기준일: 2024년 1월 1일 (Day 1)",
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ui: {
                 subtitle: "A new 6-day calendar system beyond the 7-day week",
                 settingsBtn: "⚙️ Settings",
+                settingsDesc: "Color / Language / Day Names",
                 selectedDayTitle: "Selected Day",
                 searchDateTitle: "Search Date",
                 anchorDateTxt: "Anchor Date: Jan 1, 2024 (Day 1)",
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ui: {
                 subtitle: "7日制カレンダーを超えた新しい6日制カレンダーシステム",
                 settingsBtn: "⚙️ 設定",
+                settingsDesc: "カラー / 言語 / 曜日名",
                 selectedDayTitle: "選択された日付の曜日",
                 searchDateTitle: "日付を検索",
                 anchorDateTxt: "基準日: 2024年 1月 1日 (Day 1)",
@@ -60,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ui: {
                 subtitle: "超越7天历的全新6天历系统",
                 settingsBtn: "⚙️ 设置",
+                settingsDesc: "颜色 / 语言 / 星期名",
                 selectedDayTitle: "选中日期的星期",
                 searchDateTitle: "搜索日期",
                 anchorDateTxt: "基准日期: 2024年 1月 1日 (Day 1)",
@@ -81,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ui: {
                 subtitle: "Un nuevo sistema de calendario de 6 días más allá de la semana de 7 días",
                 settingsBtn: "⚙️ Ajustes",
+                settingsDesc: "Color / Idioma / Nombres",
                 selectedDayTitle: "Día Seleccionado",
                 searchDateTitle: "Buscar Fecha",
                 anchorDateTxt: "Fecha Base: 1 Ene 2024 (Day 1)",
