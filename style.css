@@ -337,11 +337,20 @@ button:hover {
 @media (max-width: 768px) {
     .huge-text { font-size: 3.5rem; }
     .top-section { flex-direction: column; }
-    .calendar-cell { font-size: 1.3rem; border-radius: 0.5rem; }
-    .day-name { font-size: 1rem; }
-    .badge { font-size: 0.85rem; bottom: 4px; }
+    .calendar-grid { gap: 0.3rem; }
+    .calendar-cell { 
+        font-size: 1.2rem; 
+        border-radius: 0.5rem; 
+        aspect-ratio: auto;
+        min-height: 65px;
+        padding-top: 10px;
+        padding-bottom: 22px;
+    }
+    .day-name { font-size: 0.9rem; padding-bottom: 0.5rem; }
+    .badge { font-size: 0.75rem; bottom: 4px; }
     .calendar-header h3 { font-size: 1.3rem; }
-    .tab-btn { font-size: 1rem; padding: 1rem 0; }
+    .tab-btn { font-size: 1rem; padding: 0.8rem 0; }
+    .memo-indicator { font-size: 0.9rem; top: 3px; right: 3px; }
 }
 
 /* Modals and Settings */
