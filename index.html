@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Horizon 6 Calendar</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>Horizon 6</h1>
+                    <p data-i18n="subtitle">A new 6-day calendar system beyond the 7-day week</p>
+                </div>
+                <button id="settingsBtn" class="icon-btn" title="Settings" data-i18n="settingsBtn">⚙️ Settings</button>
+            </div>
+        </header>
+
+        <section class="top-section">
+            <div class="result-card">
+                <h2 data-i18n="selectedDayTitle">Selected Day</h2>
+                <div id="horizonDayDisplay" class="huge-text">Day 1</div>
+                <p id="selectedDateDisplay">Jan 1, 2024 (Mon)</p>
+            </div>
+            
+            <div class="input-card">
+                <h3 data-i18n="searchDateTitle">Search Date</h3>
+                <p data-i18n="anchorDateTxt">Anchor Date: Jan 1, 2024 (Day 1)</p>
+                <div class="input-container">
+                    <input type="date" id="datePicker">
+                    <button id="todayBtn" data-i18n="todayBtn">Go to Today</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab-7day" data-i18n="tab7Btn">7-Day Calendar (Standard)</button>
+                <button class="tab-btn" data-tab="tab-6day" data-i18n="tab6Btn">6-Day Calendar (Horizon 6)</button>
+            </div>
+
+            <!-- Standard 7-Day Calendar -->
+            <div class="tab-content active" id="tab-7day">
+                <div class="calendar-header">
+                    <button id="prevMonth7" class="nav-btn">&lt;</button>
+                    <h3 id="monthYear7">Jan 2024</h3>
+                    <button id="nextMonth7" class="nav-btn">&gt;</button>
+                </div>
+                <div class="calendar-grid grid-7">
+                    <div class="day-name">Sun</div>
+                    <div class="day-name">Mon</div>
+                    <div class="day-name">Tue</div>
+                    <div class="day-name">Wed</div>
+                    <div class="day-name">Thu</div>
+                    <div class="day-name">Fri</div>
+                    <div class="day-name">Sat</div>
+                    <!-- Cells injected by JS -->
+                </div>
+            </div>
+
+            <!-- Horizon 6-Day Calendar -->
+            <div class="tab-content" id="tab-6day">
+                <div class="calendar-header horizon-header">
+                    <button id="prevMonth6" class="nav-btn">&lt;</button>
+                    <h3 id="monthYear6">Jan 2024</h3>
+                    <button id="nextMonth6" class="nav-btn">&gt;</button>
+                </div>
+                <div class="calendar-grid grid-6">
+                    <div class="day-name h6">Day 1</div>
+                    <div class="day-name h6">Day 2</div>
+                    <div class="day-name h6">Day 3</div>
+                    <div class="day-name h6">Day 4</div>
+                    <div class="day-name h6">Day 5</div>
+                    <div class="day-name h6">Day 6</div>
+                    <!-- Cells injected by JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Horizon 6 Edit Menu</h2>
+                <button class="close-btn" id="closeSettingsBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h3>Grid & Style</h3>
+                    <label class="setting-row">
+                        <span>Grid Theme Color</span>
+                        <input type="color" id="gridBorderColor" value="#334155">
+                    </label>
+                    <label class="setting-row">
+                        <span>Grid Line Width (px)</span>
+                        <input type="number" id="gridBorderWidth" value="1" min="0" max="5">
+                    </label>
+                    <label class="setting-row">
+                        <span>Inner Text Color</span>
+                        <input type="color" id="cellTextColor" value="#f8fafc">
+                    </label>
+                    <label class="setting-row">
+                        <span>Day Name Color</span>
+                        <input type="color" id="dayNameColor" value="#94a3b8">
+                    </label>
+                    <label class="setting-row">
+                        <span>Language</span>
+                        <select id="languageSelect">
+                            <option value="en">English</option>
+                            <option value="ko">한국어</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh">中文</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </label>
+                    <label class="setting-row">
+                        <span>Inner Line Style</span>
+                        <select id="gridBorderStyle">
+                            <option value="solid">Solid</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="dotted">Dotted</option>
+                        </select>
+                    </label>
+                    <label class="setting-row">
+                        <span>Cell Background Color</span>
+                        <input type="color" id="cellBgColor" value="#0f172a">
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Day Name Customization (6-Day)</h3>
+                    <p class="setting-hint">Default: Day 1 ~ Day 6</p>
+                    <div class="day-inputs">
+                        <input type="text" id="customDay1" placeholder="Day 1">
+                        <input type="text" id="customDay2" placeholder="Day 2">
+                        <input type="text" id="customDay3" placeholder="Day 3">
+                        <input type="text" id="customDay4" placeholder="Day 4">
+                        <input type="text" id="customDay5" placeholder="Day 5">
+                        <input type="text" id="customDay6" placeholder="Day 6">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="resetSettingsBtn" class="secondary-btn">Reset to Default</button>
+                <button id="saveSettingsBtn" class="primary-btn">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memo Modal -->
+    <div id="memoModal" class="modal-overlay">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h2 id="memoModalDateTitle">Write Memo</h2>
+                <button class="close-btn" id="closeMemoBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label class="setting-row">
+                    <span>Emoji (Sticker)</span>
+                    <input type="text" id="memoEmoji" placeholder="🔥" maxlength="2" class="emoji-input">
+                </label>
+                <label class="setting-col">
+                    <span>Memo Note</span>
+                    <textarea id="memoText" rows="4" placeholder="Enter what to remember..."></textarea>
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button id="deleteMemoBtn" class="danger-btn">Delete</button>
+                <button id="saveMemoBtn" class="primary-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
