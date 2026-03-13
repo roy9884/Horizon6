@@ -335,20 +335,22 @@ button:hover {
 .badge-std { color: var(--day-name-color); }
 
 @media (max-width: 768px) {
-    .huge-text { font-size: 3.5rem; }
+    .container { padding: 0.5rem; }
+    .tab-content { padding: 1rem 0.5rem; }
+    .huge-text { font-size: 3rem; }
     .top-section { flex-direction: column; }
-    .calendar-grid { gap: 0.3rem; }
+    .calendar-grid { gap: 0.2rem; }
     .calendar-cell { 
-        font-size: 1.2rem; 
-        border-radius: 0.5rem; 
+        font-size: 1.1rem; 
+        border-radius: 0.4rem; 
         aspect-ratio: auto;
-        min-height: 70px;
-        padding-top: 10px;
-        padding-bottom: 24px;
-        justify-content: flex-start; /* 글씨가 위쪽으로 배치되도록 수정 */
+        min-height: 80px;
+        padding-top: 8px;
+        padding-bottom: 26px;
+        justify-content: flex-start;
     }
-    .day-name { font-size: 0.85rem; padding-bottom: 0.3rem; }
-    .badge { font-size: 0.75rem; bottom: 4px; line-height: 1.1; }
+    .day-name { font-size: 0.8rem; padding-bottom: 0.2rem; }
+    .badge { font-size: 0.7rem; bottom: 3px; line-height: 1.1; max-width: 95%; }
     .calendar-header h3 { font-size: 1.3rem; }
     .tab-btn { font-size: 1rem; padding: 0.8rem 0; }
     .memo-indicator { font-size: 0.9rem; top: 3px; right: 3px; }
